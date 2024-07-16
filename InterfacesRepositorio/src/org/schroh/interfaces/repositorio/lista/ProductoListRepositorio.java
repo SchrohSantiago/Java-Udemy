@@ -3,6 +3,7 @@ package org.schroh.interfaces.repositorio.lista;
 import org.schroh.interfaces.modelo.Producto;
 import org.schroh.interfaces.repositorio.AbstractListRepositorio;
 import org.schroh.interfaces.repositorio.Direccion;
+import org.schroh.interfaces.repositorio.excepciones.LecturaAccesoDatoException;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,7 +12,7 @@ public class ProductoListRepositorio extends AbstractListRepositorio<Producto> {
 
 
     @Override
-    public void editar(Producto producto) {
+    public void editar(Producto producto) throws LecturaAccesoDatoException {
         Producto p = porId(producto.getId());
         p.setDescripcion(producto.getDescripcion());
         p.setPrecio(producto.getPrecio());

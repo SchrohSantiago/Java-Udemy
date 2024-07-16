@@ -3,6 +3,7 @@ package org.schroh.interfaces.repositorio.lista;
 import org.schroh.interfaces.modelo.Cliente;
 import org.schroh.interfaces.repositorio.AbstractListRepositorio;
 import org.schroh.interfaces.repositorio.Direccion;
+import org.schroh.interfaces.repositorio.excepciones.LecturaAccesoDatoException;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,7 +11,7 @@ import java.util.List;
 public class ClienteListRepositorio extends AbstractListRepositorio<Cliente> {
 
     @Override
-    public void editar(Cliente cliente) { // Ediar y los demas meotods que dejamos en esta clase es porque son propios, poseen diferente getters y setters segun las distintas clases por ende no pueden ser genericos...
+    public void editar(Cliente cliente) throws LecturaAccesoDatoException { // Ediar y los demas meotods que dejamos en esta clase es porque son propios, poseen diferente getters y setters segun las distintas clases por ende no pueden ser genericos...
         Cliente c = this.porId(cliente.getId());
         c.setNombre(cliente.getNombre());
         c.setApellido(cliente.getApellido());
