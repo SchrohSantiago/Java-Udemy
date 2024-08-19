@@ -48,10 +48,7 @@ public class EjemploRepositorio {
             System.out.println("El objeto ya existe" + e.getMessage());
             e.printStackTrace();
         }
-        catch (LecturaAccesoDatoException e) {
-            System.out.println(e.getMessage());
-            e.printStackTrace();
-        } catch (EscrituraAccesoDatoException e){
+        catch (LecturaAccesoDatoException | EscrituraAccesoDatoException e) {
             System.out.println(e.getMessage());
             e.printStackTrace();
         } catch (AccesoDatoException e){
